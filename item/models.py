@@ -18,6 +18,7 @@ class Category(models.Model):
 
 
 class Item(models.Model):
+  
   name = models.CharField(max_length=255)
   description = models.TextField(blank=True,null=True)
   price = models.FloatField()
@@ -27,4 +28,7 @@ class Item(models.Model):
   created_at= models.DateTimeField(auto_now_add=True)
   created_by = models.ForeignKey(User,related_name="items",on_delete=models.CASCADE)
   category = models.ForeignKey(Category,related_name="items",on_delete=models.CASCADE)  
-  
+
+  # returning name of object 
+  def __str__(self):
+    return self.name
