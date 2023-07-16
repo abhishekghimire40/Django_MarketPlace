@@ -13,7 +13,7 @@ urlpatterns = [
     path("signup/", views.signup, name="signup"),
     # used django built in login view to handle login
     # NOTE: when logged in, it redirect to /accounts/profile so make sure to redirect it
-    # to a path you want in settings.py file
+    # to a path you want in settings.py files
     path(
         "login/",
         auth_views.LoginView.as_view(
